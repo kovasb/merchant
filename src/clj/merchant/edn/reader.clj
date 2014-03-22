@@ -18,7 +18,10 @@
       (resolve (symbol (str (subs cname 0 dot) "/map->" (subs cname (inc dot))))))))
 
 (defn tl-mapping-to-constructor [tl-mapping]
-  [(symbol (:tag tl-mapping)) (class->factory (:record tl-mapping))])
+  [(symbol (:tag tl-mapping))
+   (if (:constructor tl-mapping)
+     (:constructor tl-mapping)
+     (class->factory (:record tl-mapping)))])
 
 
 (defn import-edn [data-string tl-mappings]

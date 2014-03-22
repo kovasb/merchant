@@ -78,7 +78,7 @@
 
 (defn edn-writer [jwriter opts]
   (let [{:keys [type-map tag-map default-fn]
-         :or {default-fn  (fn [this o] (throw (Throwable. "No EDN mapping for type")))}} opts]
+         :or {default-fn  (fn [this o] (throw (Exception. "No EDN mapping for type")))}} opts]
     (EdnWriter.
       jwriter
       (make-writer-fn
