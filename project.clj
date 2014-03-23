@@ -1,5 +1,4 @@
-(defproject merchant "0.1.2-SNAPSHOT"
-  :description "FIXME: write description"
+(defproject merchant "0.1.3"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :jvm-opts ^:replace ["-server"  "-Xmx1G"]
